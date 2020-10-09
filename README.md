@@ -8,11 +8,11 @@
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href="https://byredhunter.github.io/grid-gallery-master/">
       Demo
     </a>
     <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
+    <a href="https://github.com/byRedHunter/grid-gallery-master">
       Solution
     </a>
     <span> | </span>
@@ -24,4 +24,4 @@
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![screenshot](https://repository-images.githubusercontent.com/302509511/21be2100-09ae-11eb-8168-68266b7b6679)
