@@ -1,9 +1,3 @@
-const $state = document.getElementById('state')
-const $textState = document.getElementById('text-state')
-const $imageState = document.getElementById('image-state')
-
-let theme = { darkMode: false }
-let text = 'DAYMODE'
 const lightTheme = {
 	'--color-light': '#f7f7f7',
 	'--color-dark': '#100303',
@@ -19,6 +13,23 @@ const darkTheme = {
 	'--color-shadow': '#f7f7f738',
 }
 
+const $state = document.getElementById('state')
+const $textState = document.getElementById('text-state')
+const $imageState = document.getElementById('image-state')
+
+let darkMode =
+	window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+
+$textState.textContent = darkMode ? 'DAYMODE' : 'NIGHTMODE'
+
+darkMode
+	? $imageState.classList.add('active')
+	: $imageState.classList.remove('active')
+
+const rotateImage = () => {
+	$imageState.classList.toggle('active')
+}
+
 const addTheme = (theme) => {
 	const styles = document.documentElement.style
 	const customStyles = Object.keys(theme)
@@ -28,22 +39,12 @@ const addTheme = (theme) => {
 	}
 }
 
-const rotateImage = () => {
-	$imageState.classList.toggle('active')
-}
-
 const toggleTheme = () => {
-	theme.darkMode = !theme.darkMode
+	darkMode = !darkMode
 
-	if (theme.darkMode) {
-		addTheme(darkTheme)
-		text = 'DAYMODE'
-	} else {
-		addTheme(lightTheme)
-		text = 'NIGHTMODE'
-	}
+	darkMode ? addTheme(darkTheme) : addTheme(lightTheme)
 
-	$textState.textContent = text
+	$textState.textContent = darkMode ? 'DAYMODE' : 'NIGHTMODE'
 
 	rotateImage()
 }
